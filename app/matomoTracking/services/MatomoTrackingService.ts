@@ -1,11 +1,10 @@
 import axios from "axios";
 import { EventTracking, MatomoCofig, UserInfo } from "../models";
-export const matomoTrackingService = (matomoCofig: MatomoCofig, userInfo: UserInfo, eventTracking: EventTracking) => {
+export const matomoTrackingEventService = (matomoCofig: MatomoCofig, userInfo: UserInfo, eventTracking: EventTracking) => {
     const body = {
           idsite: matomoCofig.idSite,
           rec: 1,
           apiv: 1,
-          ...(matomoCofig.userId ? { uid: matomoCofig.userId  }: {}),
           send_image: 0,
           ...userInfo,
           ...eventTracking

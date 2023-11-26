@@ -1,8 +1,7 @@
-import { EventTracking } from "./EventTracking";
-import { MatomoCofig } from "./MatomoConfig";
-import { UserInfo } from "./UserInfo";
+import { MatomoCofig, UserInfo, RecommendedParameters, EventTracking } from "./MatomoModel"
 export {
-    EventTracking,
     MatomoCofig,
-    UserInfo
+    UserInfo,
+    RecommendedParameters, 
+    EventTracking
 }

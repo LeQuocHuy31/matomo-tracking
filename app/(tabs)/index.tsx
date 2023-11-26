@@ -2,18 +2,17 @@ import { StyleSheet, TouchableHighlight } from 'react-native';
 
 import { Text, View } from '../../components/Themed';
 import { EventTracking, MatomoCofig, UserInfo } from '../matomoTracking/models';
-import { matomoTrackingService } from '../matomoTracking/services/MatomoTrackingService';
+import { matomoTrackingEventService } from '../matomoTracking/services/MatomoTrackingService';
 
 export default function TabOneScreen() {
   const matomoConfig: MatomoCofig = {
-    trackUrl: "",
-    baseUrl: "",
-    idSite: 3
+    trackUrl: "https://huylequoc13.matomo.cloud/matomo.php",
+    baseUrl: "https://huylequoc13.matomo.cloud/",
+    idSite: 1
   };
   const userInfo: UserInfo = {
-    url: "",
-    h:7,
-    m:40,
+    h: 7,
+    m: 40,
     s: 1,
     res: "720*1280",
     new_visit: 0,
@@ -24,12 +23,14 @@ export default function TabOneScreen() {
     e_a: "Test action 1",
     e_c: "Test category",
     e_n: "Test name",
-    e_v: "Test value"
+    e_v: 103,
+    url: "https://huylequoc13.matomo.cloud/",
+    action_name: "New Action"
   }
   return (
     <View style={styles.container}>
       <TouchableHighlight onPress={() => {
-          matomoTrackingService(matomoConfig, userInfo, eventTracking)
+          matomoTrackingEventService(matomoConfig, userInfo, eventTracking)
       }}>
         <Text>Send data to Matomo</Text>
       </TouchableHighlight>
